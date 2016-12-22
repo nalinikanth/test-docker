@@ -1,0 +1,11 @@
+*.ipr
+*.iws
+*.iml
+.idea
+cache
+fig.yml.sample
+web/releases
+database/dhis2-db.sql.gz
+.DS_Store
+test/SeleniumUI
+apitests/api-tests

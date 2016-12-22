@@ -1,0 +1,30 @@
+version: '2'
+services:
+  database:
+    container_name: dhis2-database
+    image: nalinim/dhis2-db:latest
+    environment:
+      POSTGRES_USER: dhis
+      POSTGRES_DB: dhis
+      POSTGRES_PASSWORD: dhis
+      PG_DATA: /var/lib/postgresql/data/pgdata
+    ports:
+     - "5342:5432"
+  web:
+    container_name: dhis2-web
+    image: nalinim/dhis2-web:2.25-tomcat7-jre8-20161221
+    environment:
+      JAVA_OPTS: "-Xmx1024m -Xms4000m"
+      POSTGRES_DB: dhis
+    ports:
+      - "8082:8080"
+    depends_on:
+      - database
+    entrypoint: ./wait-for-it.sh -t 0 database:5432 --
+    command: catalina.sh run # https://github.com/docker/compose/issues/3140
+  test:
+    container_name: dhis2-test
+    image: nalinim/test
+    depends_on:
+      - web
+    entrypoint: ./entrypoint.sh
