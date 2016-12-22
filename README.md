@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/pgracio/dhis2-docker.svg?branch=master)](https://travis-ci.org/pgracio/dhis2-docker)
-
-dhis2-docker
+test-docker
 ==============
 
 This document describes the requirement allowing to easily run [dhis2](https://www.dhis2.org/) using [docker](https://www.docker.com/) containers.
@@ -54,7 +52,7 @@ For testing purposes I'm using AWS Free Tier. All you have to do is
 
 ```
 database:
-  image: 'pgracio/dhis2-db:2.25-sierra-leone'
+  image: 'nalinim/dhis2-db'
   environment:
     - PG_DATA=/var/lib/postgresql/data/pgdata
     - POSTGRES_DB=dhis
@@ -74,8 +72,3 @@ web:
 ```
 
 
-Bugs, new requests or contribution
---------------
-Please submit bugs and feature requests at https://github.com/pgracio/dhis2-docker/issues
-
-Any other questions contact Paulo Grácio on Twitter at @pjrgracio, email at paulo.gracio@gmail.com
