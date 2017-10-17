@@ -6,5 +6,5 @@ set -e;
 #cd SeleniumUI
 #git pull
 docker build -t nalinim/apitests .
-docker login -u="nalinim" -p="Naruto@12"
+docker login -u="nalinim" -p="@12"
 docker push nalinim/apitests

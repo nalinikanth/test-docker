@@ -2,7 +2,7 @@ test-docker
 ==============
 
 This document describes the requirement allowing to easily run [dhis2](https://www.dhis2.org/) using [docker](https://www.docker.com/) containers.
-
+--------------------------------------------------------------------------------------------------------------------------------------------------
 Prerequisites
 -------------
 
